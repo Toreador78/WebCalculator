@@ -1,0 +1,43 @@
+* {
+  background-color: black;
+}
+
+.calculator {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.textbox {
+  cborder: none;
+  height: 104px;
+  width: 212px;
+  color: white;
+  text-align: right;
+  font-size: 25px;
+}
+.button {
+  border: solid, 1px, blue;
+  padding: 0;
+  margin: 0;
+  background-color: grey;
+  height: 50px;
+  width: 50px;
+  border: none;
+}
+.AC {
+  width: 104px;
+}
+
+.number {
+  background-color: lightgrey;
+}
+
+.zero {
+  background-color: lightgrey;
+  width: 104px;
+}
+
+.basiccalc {
+  background-color: orange;
+}
