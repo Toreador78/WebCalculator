@@ -4,11 +4,7 @@ $(document).ready(function(){
   textbox.curval = "";
 
   function checkDecimal(){
-    if (textbox.curval.indexOf(".") == -1) {
-      return true;
-    } else {
-      return false;
-    }
+    return textbox.curval.indexOf(".") == -1 ? true : false;
   }
 
   function resetCalc(){
@@ -19,50 +15,56 @@ $(document).ready(function(){
   }
 
   function evalCalc(){
-    var result = eval(textbox.lastval + textbox.operation + textbox.curval);
-    textbox.val(result);
-    textbox.lastval = result;
+    textbox.lastval = eval(textbox.lastval + textbox.operation + textbox.curval);
+    textbox.val(parseFloat(textbox.lastval));
     textbox.curval = "";
   }
 
+  function addDigit(digit){
+    textbox.curval += digit;
+    textbox.val(textbox.curval);
+  }
+
   resetCalc();
-  console.log("ready");
 
   $(".number").click(function(){
     if (textbox.curval === "0") {
       textbox.curval = "";
     }
-    textbox.curval += $(this).val();
-    textbox.val(textbox.curval);
-    console.log(textbox);
+    addDigit($(this).val());
   });
+
   $(".basiccalc").click(function(){
     if (textbox.lastval === ""){
-      textbox.operation = $(this).val();
       textbox.lastval = textbox.curval;
       textbox.curval = "";
-    } else {
+    } else if (textbox.curval !== ""){
       evalCalc();
-      textbox.operation = $(this).val();
     }
-    console.log(textbox);
+    textbox.operation = $(this).val();
   });
+
   $(".AC").click(function(){
     resetCalc();
-    console.log("PM");
   });
+
   $(".PM").click(function(){
-    //TODO: Implement inverter; how does he work after all?
-    console.log("PM");
-  });
-  $(".decimal").click(function(){
-    if (checkDecimal() === true){
-      textbox.curval += $(this).val();
-      textbox.val(textbox.curval);
+    if (textbox.curval === ""){
+      textbox.lastval = eval("-1" * textbox.lastval);
+      textbox.val(parseInt(textbox.lastval));
+    } else {
+      textbox.curval = eval("-1" * textbox.curval);
+      textbox.val(parseInt(textbox.curval));
     }
   });
+
+  $(".decimal").click(function(){
+    if (checkDecimal() === true){
+      addDigit($(this).val());
+    }
+  });
+
   $(".eval").click(function(){
     evalCalc();
-    console.log(textbox);
   });
 });
