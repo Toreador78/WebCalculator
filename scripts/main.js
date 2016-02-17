@@ -18,6 +18,7 @@ $(document).ready(function(){
     textbox.lastval = eval(textbox.lastval + textbox.operation + textbox.curval);
     textbox.val(parseFloat(textbox.lastval));
     textbox.curval = "";
+    textbox.operation = "";
   }
 
   function addDigit(digit){
@@ -31,7 +32,11 @@ $(document).ready(function(){
     if (textbox.curval === "0") {
       textbox.curval = "";
     }
+    if ((textbox.curval === "") && (textbox.operation === "")){
+      textbox.lastval = "";
+    }
     addDigit($(this).val());
+    console.log(textbox);
   });
 
   $(".basiccalc").click(function(){
@@ -66,5 +71,6 @@ $(document).ready(function(){
 
   $(".eval").click(function(){
     evalCalc();
+    console.log(textbox);
   });
 });
