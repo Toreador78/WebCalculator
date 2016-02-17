@@ -55,11 +55,11 @@ $(document).ready(function(){
 
   $(".PM").click(function(){
     if (textbox.curval === ""){
-      textbox.lastval = eval("-1" * textbox.lastval);
-      textbox.val(parseInt(textbox.lastval));
+      textbox.lastval = eval("-1" * textbox.lastval);      
+      textbox.val(parseFloat(textbox.lastval));
     } else {
       textbox.curval = eval("-1" * textbox.curval);
-      textbox.val(parseInt(textbox.curval));
+      textbox.val(parseFloat(textbox.curval));
     }
   });
 
