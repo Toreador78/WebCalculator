@@ -3,9 +3,7 @@
 }
 
 .calculator {
-  margin: auto;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  position: center;
 }
 
 .textbox {
@@ -15,6 +13,9 @@
   color: white;
   text-align: right;
   font-size: 25px;
+}
+.buttons{
+  margin: 2px;
 }
 .button {
   border: solid, 1px, blue;
