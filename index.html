@@ -1,50 +1,52 @@
 <!doctype html>
 <html lang="">
+
 <head>
   <meta charset="utf-8">
   <title>Web Calculator</title>
   <!-- bower:css -->
   <!--<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />-->
+  <link rel="StyleSheet" href="styles/reset.css">
   <link rel="StyleSheet" href="styles/custom.css">
 </head>
+
 <body>
-  <div class="calculator container">    
-    <div class="row">
-      <input type="textbox" class="textbox" value="0" readonly>
-    </div>
+  <div class="calculator container">
+    <h2>Web Calculator</h2>
+    <input type="textbox" class="textbox" value="0" readonly>
     <div class="buttons">
-      <div class="row">
+      <div>
         <button class="AC button" value="AC">AC</button>
         <button class="PM button" value="PM">+/-</button>
-        <!--
-        <button class="button" value="%">%</button>
-  -->
+        <!--<button class="button" value="%">%</button>-->
         <button class="basiccalc button" value="/">/</button>
       </div>
-      <div class="row">
+      <div>
         <button class="number button" value="7">7</button>
         <button class="number button" value="8">8</button>
         <button class="number button" value="9">9</button>
         <button class="basiccalc button" value="*">*</button>
       </div>
-      <div class="row">
+      <div>
         <button class="number button" value="4">4</button>
         <button class="number button" value="5">5</button>
         <button class="number button" value="6">6</button>
         <button class="basiccalc button" value="-">-</button>
       </div>
-      <div class="row">
+      <div>
         <button class="number button" value="1">1</button>
         <button class="number button" value="2">2</button>
         <button class="number button" value="3">3</button>
         <button class="basiccalc button" value="+">+</button>
       </div>
-      <div class="row">
+      <div>
         <button class="number zero button" value="0">0</button>
         <button class="decimal button" value=".">.</button>
         <button class="eval button" value="=">=</button>
       </div>
     </div>
+    <p><em>Note:</em>This calculator uses sequential notation</p>
+    <p class="cr"> &copy 2016 Toreadors Code</p>
   </div>
   <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="scripts/main.js"></script>
